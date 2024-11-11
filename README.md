@@ -22,6 +22,11 @@ $ cd facebook-reels-downloader
 $ pip install -r requirements.txt
 ```
 ## Usage
+
+You can use this in Docker using a premade configuration:
+https://tecadmin.net/setup-selenium-chromedriver-on-ubuntu/
+
+
 ```
 python reels.py <channel_name> <channel_reel_url>
 ```
