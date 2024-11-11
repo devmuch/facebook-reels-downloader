@@ -8,8 +8,17 @@ import sys
 
 # Initialize the WebDriver
 # Ensure the chromedriver is in the system path or provide the absolute path
-driver = webdriver.Chrome()  # Update if needed, e.g., webdriver.Chrome(executable_path='/path/to/chromedriver')
-driver.maximize_window()
+
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.add_argument("--window-size=1920,1080")
+
+driver = webdriver.Chrome(options=chrome_options)  # Update if needed, e.g., webdriver.Chrome(executable_path='/path/to/chromedriver')
+
+# driver.maximize_window()
 
 # Open the webpage
 chanel = sys.argv[1]
